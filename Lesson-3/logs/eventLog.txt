@@ -1,3 +1,0 @@
-2025-02-01 14:13:29	53a91eae-ac9a-41f5-9fbf-7cde07e5cba1	Log event emitter!
-2025-02-01 14:13:52	4803bf2e-5b7b-4acb-b1b0-a0917417e666	Log event emitter!
-2025-02-01 14:19:49	0ebf3b87-7421-4acc-a2ac-960f7d2aef56	Log event emitter!
