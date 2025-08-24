@@ -5,11 +5,12 @@ const fsPromises = require("fs").promises;
 
 const logEvents = require("./logEvents");
 const EventEmitter = require("events");
-class Emitter extends EventEmitter {}
+class Emitter extends EventEmitter { }
 
 // Initialize Object
 const myEmitter = new Emitter(); // Corrected the variable name
 myEmitter.on("log", (msg, fileName) => logEvents(msg, fileName));
+
 const PORT = process.env.PORT || 3500;
 
 const serveFile = async (filePath, contentType, response) => {
@@ -69,17 +70,20 @@ const server = http.createServer((req, res) => {
     contentType === "text/html" && req.url === "/"
       ? path.join(__dirname, "views", "index.html")
       : contentType === "text/html" && req.url.slice(-1) === "/"
-      ? path.join(__dirname, "views", req.url, "index.html")
-      : contentType === "text/html"
-      ? path.join(__dirname, "views", req.url)
-      : path.join(__dirname, req.url);
+        ? path.join(__dirname, "views", req.url, "index.html")
+        : contentType === "text/html"
+          ? path.join(__dirname, "views", req.url)
+          : path.join(__dirname, req.url);
 
   //Makes the .html extension not required in the browser
-  if (!extension && req.url.slice(-1) !== "/") filePath += ".html";
+  if (!extension && req.url.slice(-1) !== "/") {
+    filePath += ".html";
+  }
 
   const fileExists = fs.existsSync(filePath);
 
   if (fileExists) {
+    //serve the file
     serveFile(filePath, contentType, res);
   } else {
     switch (path.parse(filePath).base) {
