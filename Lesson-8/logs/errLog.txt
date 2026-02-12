@@ -1,0 +1,3 @@
+20250824	15:51:49	c6e0c143-35f0-4173-a3fe-5be9d91748a1	Error: Not allowed by CORS
+20260212	16:11:34	40f1657f-5b05-4a5e-bb9c-e9c8ca410712	TypeError: Cannot set properties of undefined (setting 'firstname')
+20260212	16:12:05	1068180a-dfeb-45ed-bc71-0bcb65af76f5	TypeError: Cannot set properties of undefined (setting 'firstname')
